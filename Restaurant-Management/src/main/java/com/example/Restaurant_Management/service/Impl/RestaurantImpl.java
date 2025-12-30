@@ -30,14 +30,14 @@ public class RestaurantImpl implements RestaurantService {
 
     @Override
     public Restaurant getorder(Long id) {
-        return repository.findById(id)
-                .orElseThrow(()->new RuntimeException("order not found with specified id "));
+        return repository.findByid(id);
+                //.orElseThrow(()->new RuntimeException("order not found with specified id "));
     }
 
     @Override
     public RestaurantDto updateorder(long id, RestaurantDto restaurantDto) {
-        Restaurant restaurant = repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("order not found with the specified id "));
+        Restaurant restaurant = repository.findByid(id);
+                //.orElseThrow(() -> new RuntimeException("order not found with the specified id "));
         restaurant.setName(restaurantDto.getName());
         restaurant.setPrice(restaurantDto.getPrice());
         Restaurant updateditem = repository.save(restaurant);
@@ -48,8 +48,8 @@ public class RestaurantImpl implements RestaurantService {
         );
     }
     public Restaurant deleteorder(Long id){
-        Restaurant restaurant1=repository.findById(id)
-                .orElseThrow(()->new RuntimeException("Order not found with id"));
+        Restaurant restaurant1=repository.findByid(id);
+                //.//orElseThrow(()->new RuntimeException("Order not found with id"));
         repository.delete(restaurant1);
 return restaurant1;
 
