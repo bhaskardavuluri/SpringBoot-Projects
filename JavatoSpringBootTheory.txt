@@ -743,6 +743,7 @@ response entity class handles all the requests and series
 @requestbody ==> to add/store the data into database  (used in postmapping and putmapping)
 @requestparameterized ==> used in key value 
 @pathvariable ==> to get data using path (used in getmapping and deletemapping) 
+ResponseEntity==>it is a class which handles all the HTTP Requests..
 
 how to handle exception in spring boot
 @exceptionhandler => global used in whole project

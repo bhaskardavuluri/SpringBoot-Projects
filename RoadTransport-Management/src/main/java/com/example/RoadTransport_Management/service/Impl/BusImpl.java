@@ -31,4 +31,32 @@ public class BusImpl implements BusService {
         );
         return saveticket;
     }
+    public Bus getticket(Long id){
+        return repository.findById(id)
+                .orElseThrow(()->new RuntimeException("ticket not found with that id "));
+    }
+    public BusDto updateticket(Long id ,BusDto busDto){
+       Bus bus=repository.findById(id)
+                .orElseThrow(()->new RuntimeException("ticket not found with id"));
+        bus.setPlace(busDto.getPlace());
+        bus.setPrice(busDto.getPrice());
+        bus.setDistance(bus.getDistance());
+        bus.setType(bus.getType());
+        Bus savedTicket=repository.save(bus);
+        return  new BusDto(
+                savedTicket.getId(),
+                savedTicket.getPlace(),
+                savedTicket.getType(),
+                savedTicket.getPrice(),
+                savedTicket.getDistance()
+        );
+
+
+    }
+    public Bus  deleteticket(Long id){
+        Bus bus= repository.findById(id)
+                .orElseThrow(()->new RuntimeException("ticket not found with the id "));
+          repository.delete(bus);
+return bus;
+    }
 }
