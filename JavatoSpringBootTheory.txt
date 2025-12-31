@@ -1,0 +1,764 @@
+java
+object oriented programming language
+first started by sun micro system by james goslin next by oracle
+what is object oriented programming language??
+It depends on objects
+any problem solved based on objects 
+features of java
+oops , platform independent (write once run anywhere) , secure (because of byte code --> it doesnt understand either by machine or human), threading , robust (strong), 
+mainly used in banking applications, e commerce , distributed applications.
+
+JDK --> JAVA DEVELOPMNET KIT --> which consists of software to build java applications
+JRE -->java runtime envirnoment --> it creates the env to run the java program
+JVM -->java virtual machine --> to execute byte code , in these only .class file is created
+JIT -->Just in time --> byte code is executed using JIT.
+
+
+
+CLASS --> blueprint of object.
+class consists of methods,variables,objects and constructors.
+creating class
+class A{
+
+}
+OBJECTS --> instance of class , it is a real world entity and has certain behaviour.it calls the data members(variables,methods) of the class
+class members are accessed by creating objects.
+creating objects  --> created by using new keyword.
+
+class A{
+ A a = new A();
+ }
+ 
+METHODS --> it is a block of code, which consists of buisness logic.
+creating methods
+class A{
+ void m1(parameters){
+
+}
+A a = new A();
+}
+
+PACKAGE --> it is a folder like structure to avoid the naming convenctions. it consists of interfaces and classes.
+=>Built-in Packages (Predefined)
+Provided by Java API.
+
+Examples:
+
+java.lang → String, Math, Object (auto-imported)
+java.util → Collections, Scanner, Optional
+java.io → Input / Output 
+java.net → Networking
+java.sql → Database connectivity
+java.time → Date & Time
+=>User-defined Packages
+Created by programmers to organize classes.
+
+VARIABLES --> It is a container to store/ hold the value or data.
+static variable --> one copy shared among all the objects,
+local variable --> accessed inside the method,default values is not possible.
+instance variable --> inside the class,outside the method
+
+static keyword --> without creating object we can use anywhere
+
+local variable example
+class A{
+void m1 (parameters){
+int a =10;
+sop(a);}
+A a = new A();
+
+instance variable example
+class A{
+int a =10;
+void m(){
+}}
+ 
+Data type --> what type of data we are giving
+primtive -->we can hold single values
+non primtive --> we can hold multiple values 
+| Data Type                                    | Memory Location             |
+| -------------------------------------------- | --------------------------- |
+| **Primitive types** (int, float, char, etc.) | ✅ Stack                     |
+| **Objects (Non-primitives)**                 | ✅ Heap (reference in stack) |
+
+
+Local primitives → Stack
+Static primitives → Method Area
+
+Method Area (Java)
+The Method Area is a memory region inside the JVM where class-level data is stored.
+It is shared by all objects of a class (only one copy exists).
+
+Access modifiers --> scope of visibility 
+private --> within the class
+public  --> every where
+protected --> within the package , outside the package by using child reference
+default --> within the package
+abstract -->Abstract methods cannot be static, final, or private
+final -->
+
+ARRAYS --> indexed group of same/homogenous data type
+fixed in size. index starts at 0.
+static data
+DRAWBACKS
+cant increase/ decrease the size(fixed nature)
+only homogenous data
+no data structure methods to perform data operations 
+only one property is there (length)
+//array declaration
+int [] eids;
+//array creation
+eids = new int[4];
+//array intalization
+eids[1] = 101;
+eids[0] = 102;
+eids[3] = 103;
+eids[2] = 104;
+//array length
+s.o.p(eids.length);
+
+OR
+
+creating array all once
+int [] arr ={10,100,1000}
+
+object array allows heterogenous data
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+CONTROL FLOW STATEMENTS --> to control the flow/order
+=>Iterative statements, conditional statements
+conditional statements -->used to make decisions based on the condition. if, if - else,nested if,to over come nested if we use switch - case.we cant write number of test cases and we use break, break ,continue (stops current iteration)
+Iterative statements --> used to repeat a block of code. for,while,do while
+for(intialization,condition,increment/decrement)--> when we know the no of iteration
+while --> when we dont know the no of iteration 
+do while -->atleast once;
+int i =0;
+while ( condition ){
+buisness logic 
+increment/decrement
+}
+
+int i=0;
+do {
+sop}
+while(){
+}
+
+public --> anywhere
+static --> without creating any object  
+void --> return type
+main --> method name
+string [] --> stores in the string array (receives command-line inputs from the user through this array.)
+args --> we can keep anything [parameters .aruguments]
+
+system --> class & contains input and output
+out --> data/return type object
+print --> print in same line 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+OOPS--> object oriented programming system/structure 
+Oops is a paradigm. which solves the problem by using any programming language on the concepts of objects,
+it is a paradigm which we use to solve problems using objects
+easy is to reuse because of inheritance and polymorphism
+secure becasuse  of encapsulation, abstraction
+inheritance -->properties inherit from parent(one class) to child(another class)/reusing existing class functionality and adding new features.
+by default every java parent class is object so if we use multiple inheritance it will get confused,invocation ambiguity
+
+types -
+single,mutli,mutliple ,heiracrchy
+single--> inherit properties from one parent to one child
+multi -->inherit properties from one parent to one child & one child to sub child
+[or] --> grand parent to parent --> child
+heiracrchy --> one parent to many child
+hybrid -->
+multiple --> no supported in java in class level but supported in interfaces **** one child getting properties from multiple parents
+because of to avoid ambiguity 
+ACHIEVE inheritance by using extend keyword --class to class 
+class to interface --> implemments
+interface to interface --> extends
+
+POLYMORPHISM --> poly means many , morphism means forms
+one action different,many forms
+example --> one object used in different classes
+
+TYPES
+compile time polymorphism --->method overloading
+runtime polymorphism --->method overriding
+achieve polymorphism 
+**method overriding ---> different classes,same method name,same parameters, same return type but different implemmention in child class.
+method overloading ---> same method name but different parameters
+class A{
+void m1(int a,int b){
+}
+void m1(int a,int b,int c){
+}
+
+class A{
+void m1() {
+sop("hello");
+}
+clas B extends A{
+void m1(){
+sop("hi");
+}}
+
+***ABSTRACTION--> hiding internal implemmention and shows the functionality.
+abstract keyword is used to  achieve abstraction
+
+abstract class contain --> implemmented(concrete method) and unimplemmented methods(abstract method)
+we cant create objects for abstract class but we can create child class that extends the abstract class
+abstract methods are implemmented in child class
+
+encapsulation -->    the data  (variable) and methods in a single unit class and restricting direct access to the data.
+achieve encapsulation using  setter and getter and make variable private.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+EXCEPTION HANDLING ---> how user handles the exception
+error --> out of the program
+EXCEPTION --> Inside the program,it is an event which occurs at the time of execution it disturbs the normal flow 
+
+class A{
+int a = 10;
+int b =0;
+sop (a/b); --> error 
+}
+
+by using try and catch we will handle exception handling
+
+class A{
+int a = 10;
+int b =0;
+try{
+s.o.p(a/b);}
+catch(arthimetic expression){
+int a =10;
+int b = 2;
+}
+s.o.p(a/b)
+}
+
+Stack trace -->the error what we got in the line class , in the console [tracing the error].
+Finally--> executes first and then try & catch will executed.
+if try block is there one is mandatory either it can be finally or catch.
+when we use system.exit it will  not execute finalize .  
+
+Types of exception
+checked expressions--> which occurs at compile time
+eg -- file not found etc
+unchecked expression --> which occurs at runtime
+eg -- class not found
+
+final --> keyword
+finally --> block
+finalize --> before destroying the object the garbage collection calls these method.
+
+EXCEPTION PROPOGATION ==> if we have 10 methods and getting exception in all methods ,if we are handling all these exeception in one new method(higher order methods)
+call stack --> calling the method stored in stack. 
+use of these --> some method have same exception in both of them, instead of handling multiple times we can handle it once. 
+throw --> just throw exception to jvm, used in  block level, handle single exeception
+throws --> compiler only guess/find the exception might be occurs, used in the methods  level,handle multiple exeception.
+
+rule of inheritance 
+parent doesnt have the exeception child has the checked exception --> compile time error
+parent doesnt have exception child throws unchecked exception --> successfully
+if parents throws any exception child throw different exception which is not throw by parent class  --> compile time 
+if parent throws any exeception child throw same exeception --> execute successfully
+if parent throws any exception child doesnt throw any exeception --> execute successfully 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+string --> group of characters, and immutable.
+why strings are immutable ---> because of string store sensitive data like email,passwords
+two ways of declaration --> string literal and string objects
+string literal --> string s1 ="hello";
+string object --> string s1 = new string("hello");
+
+memory management --> two memories
+heap memory --> string object is stored
+string constant  pool --> string literal is stored
+
+we use length () method to check string length
+heap VS SCP
+***** SCP-->if two string literals has same data , it will be stored in same memory address. we save memory.
+heap --> if string objects has same data, it will be stored in different memory allocation/ address.
+
+string object data is stored both in heap and SCP also. not memory address 
+✔ “String object value exists in SCP, while the object itself is stored in Heap — addresses are different but content is same.”
+
+String Constant Pool  →  "java"
+                           ↑
+Heap Object           →  new String("java")
+
+equals () --> Compares values / content / data
+== -->Compares memory address
+
+intern method --> string object memory stored in heap but i want store the memory address in SCP then we use intern method
+
+String s1 = new String("java").intern();
+String s2 = "java";
+  
+STRING CONSTANT POOL (SCP)
+--------------------------
+"java"  <---- s1
+           <--- s2
+
+
+HOW TO USE STRING BUILDER AND STRING BUFFER
+
+string builder--> not thread safe , asynchronous. --> multiple request
+string buffer --> thread safe,synchronous.-->single request
+if string is null it doesnot return null point exeception
+string = null;
+output ==> null
+string buffer uses the concat method and string builder uses the append method,
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+COLLECTIONS--> is a frame work and collection of data 
+combination of collection interface,map interface and utility classes.
+it belongs to util package
+dynamic data ==> we can change
+collection --> root interface
+
+Map
+ |
+HashMap, TreeMap, LinkedHashMap
+
+           Iterable
+                ↓
+            Collection
+         ┌───────┼────────┐
+        List     Set      Queue
+         │        │         │
+     ArrayList  HashSet  Deque(interface) -->linked to linked list
+     LinkedList TreeSet    |
+	 (classes)  Linked   PriorityQueue(class)
+				hashset
+
+
+It can accept both homogenous and heterogenous data.
+No fixed size , more in built methods.dynamic data
+when to use collections -->used to create large number of data
+
+map --
+|
+______________________________________________________________
+|                |                    |                       |
+hash map        linked hashmap      hash table            Tree map
+
+Collection
+   |
+--------------------------------
+|              |               |
+List           Set            Queue
+
+Structure of collections ==>
+                               
+________________________      |
+                        |     |
+collections frameworks   | ==>|
+________________________|     |
+                              |
+
+
+utility classes -->arrays (class)
+                -->collections(class)
+Interface -->it is a blue print of class which consists of only abstract methods.
+it is like buisness requirements --> no implemmention 100% abstract class
+only child class implemment abstract class.
+we are not creating objects for interface becasuse it contains only abstract methods.
+
+vector default value is 10.
+array list default value is 0. when we add one element it will increase to 10.
+when we add other element it will become 50% of current element (10/2 ==> 5) 10+5 =15.
+
+ARRAY LIST.
+how to create array list.
+List<> e1 = new ArrayList<>();
+e1.add(101);
+<> ==> it is called as generic. it is used to pass data type.
+<Integer>
+arraylist starts from 0 to n-1. and follow indexing order.
+it is stored in contiguous memory location(line by line).
+searching is very easy in arraylist.
+manipulation(insertion and deletion) is very difficult.
+index:01234
+value:12345
+if i want to add 7 at 2 index all the values shift to next index
+index:01234
+value:12734
+
+it consumes only less memory.
+we are not creating objects for interface becasuse it contains only abstract methods.
+
+LINKED LIST:
+stored in the form of nodes.
+creation of linked list ===> List<> e1 = new Linkedlist<>(); 
+e2.add(101);
+manipulation is very easy in linked lists./
+searching is very difficult in linked list.
+it is stored in non-contiguous memory location(line by line).
+it consumes more memory
+[node] ==> contains next memory address
+******imp****** difference b/w linked list and arraylist
+
+| Feature              | ArrayList  | LinkedList     |
+| -------------------- | ---------- | -------------- |
+| Memory               | Contiguous | Non-contiguous |
+| Searching            | ✅ Fast     | ❌ Slow       |
+| Insertion & deletion | ❌ Slow     | ✅ Fast       |
+| Memory use           | ✅ Less     | ❌ More      |
+| Data structure       | Array      | Nodes          |
+
+
+
+MAP is key value pairs
+key -->unique
+value -->duplicates allowed
+
+hashmap -->key value pairs same as map
+it is asynchronous
+it is not thread same
+allow null key many null value
+
+map<integer,string> m1 =new Hashmap<>();
+m1.put(101,"virat")
+new Hashmap<>(); --> map object
+putif absent
+*****internal working of hashmap -->
+***hashing:mechanism convert map object into integer by using hash code 
+***hashcode():it allocates memory address to the integer
+equals():it will check the memory address, if two keys has same memory address.
+buckets:16 buckets 0 to 15 key value pairs are stored in any of the 16  buckets based on the memory address.
+if two key value pairs have same memory address it will be stored in bucket internal as linked list nodes.
+hash map allows only one null key, many null values. null key is stored in  0 th bucket.
+
+hashtable 
+it is synchronous
+thread safe
+no null key no null values
+
+set is unordered
+doesnot allow duplicates
+hashset--internal hashmap  , linked hashset --linked hashmap follows insertion order,tree set -->tree map
+
+
+queue --> first in first out 
+✅ Collections = framework storing & manipulating data
+✅ Collection = root interface
+✅ List = allows duplicates + index order
+✅ ArrayList = fast search, slow manipulation
+✅ LinkedList = slow search, fast manipulation
+✅ Map = key-value pairs
+✅ HashMap = not thread safe, allows 1 null key
+✅ Hashtable = thread safe, no nulls
+✅ Set = no duplicates
+✅ Queue = FIFO   ==> used to call multiple api, but it is difficult default -16
+priority queue -->11
+
+
+Concurrent hashmap -->synchronous,thread safe
+lock happens only on the particular section being updated, not the whole map.
+
+hashtable  --> The entire map is locked, and all operations become sequential (slow).
+___________________________________________________________________________
+| Feature      | Hashtable            | ConcurrentHashMap                 |
+| ------------ | -------------------- | -------------------------------   |
+| Thread-safe  |  Yes                 |  Yes                              |
+| Locking      | **Full map lock**    | **Partial lock (bucket-level)**   |
+| Concurrency  |  Single thread only  |  Multiple threads                 |
+| Performance  |  Slow                |  Fast                             |
+| Modern usage |  Legacy              |  Recommended                       |
+__________________________________________________________________________
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+JAVA 8
+what is java8? --> advanced version of java 7
+⚫Lambda expressions --> to enable functional programming
+⚫Functional Interface --> the interface which contains only one abstract method 
+⚫Pre defined functional interfaces
+⚫Optional class
+⚫Default and static methods at interface level
+⚫Method and constructors references using (::)
+⚫Stream API
+⚫Date and time API (not that imp)
+
+from java8 the functional programming has been enabled
+what is functional programming language ?
+->To write the code in concise way(shortest way).
+->Parallel programming --> we can run one program parallel in different system
+->in streams -->multiple tasks run at time
+=>interface is the blue print of class
+--it contains only abstract class 
+--it is like buisness requirements
+
+Lambda expression ("-->" symbol)
+->to call the api very easily 
+->to write code in concise way
+
+Characteristics of lambda expression
+->doesnot have method name,access modifiers & data/return type, it is a anynomonous function 
+**->type inference --> it will automatically guess what type of data in the situation
+() -->s.o.p() --> without variable also we can create
+s -->s.o.p() -->single variable no need to use paranthesis
+(a,b) --> s.o.p() -->need to use paranthesis
+(a,b) -->{} --> multiple statements use flower brackets.
+
+Functional interface -->Interface with only one abstract method
+@functionalInterface -->used to restrict the addition of  one more abstract method
+where to use --> at time of invoking the lambda expression
+@FunctionalInterface
+interface MyInterface {
+    void show();   // only one abstract method
+}
+
+why functional interface contain only one abstarct method ===> because of lambda expression to invoke it .
+why do we use pre defined functionalInterface?
+-> to make lambda expression daily use.
+examples : runnable, callable, comparable, comparator.
+we can extend interfaces but not implemmention not possible. there is no use even if you implemment because we dont create methods for objects.
+
+Types of pre defined functional interface
+one aruguments 
+two aruguments 
+
+===>One arugument  predefined functional Interface
+function  --> it is a ft ehich accepts only one input one output,contain only one method called apply
+predicate -->it is a ft which accepts one input and gives output as boolean,contain only one  method called test
+consumer --> it is a ft which accepts only input, contains method called accept
+supplier --> it is a ft which gives only output  no input , contains method called get
+
+
+Two arugument predefined functional Interface
+bipredicate -->two input and gives output as boolean one method called test
+bifunction --> two input one output, only one method called apply
+biconsumer  --> two inputs no output , only one method called accept  
+--- 
+bisupplier is not present because it does not have input so how can it give two outputs
+
+comparetor --> used to compare values for sorting,contains compare method
+comparable --> used to compare objects, contains compare to method
+
+Optional class -->used to avoid null point exception
+*******methods -->of and of nullable are imp
+optional.of --> if it contains value it will print value, if null it will present nullpointexeception
+->Optional.of(value) → Use when value is NOT null, Throws NullPointerException if value is null(not used mostly)
+->Optional.ofNullable(value) → Use value when value is present , if null is present it will give false(boolean value) 
+it contains is present method.
+
+Default and static interface ==> without disturbing the child classes we can call the default and static method.
+difference is default method we can override static method we cant override.
+
+**********Streams ==>it is like collection of data to be processed.
+only processing no storing the data
+it is like a pipeline, it will do the process of collections. i.e.collection of data
+two important methods ==> map and filter
+using for each loop to get the data
+for (name:names){
+
+}
+here names is our collection , name is variable to store our data.
+what is upcasting and down casting
+list<>l1 = new arraylist<>();
+l1.add(10);
+list <> l2 = l1.stream()
+from .stream() --> the collection of data is converted to stream of collections , before that it is collection
+******************map and filter methods are very imp
+streams--> using stream method we are converting collection of element into stream of elements
+=>intermediate --> 
+.map --> each and every object performs one operation and stores in another collection at that time we use map.
+.filter -->based on condition we can filter the data and stored in another collection.
+.distinct()-->remove duplicates in collection using .distinct()
+.reduce() --> perform some operation on collection of element and gives single result.
+=>terminal operations-->After performing the intermediate operations we are doing something
+.count()--> count the no of elements
+.max()-->
+.min()-->
+.collect()
+.sum()
+.avg()
+.collect(collectors.toList()) --> converting stream of elements into collection
+collectors --> class & it contain some methods.
+.filter() -->based on the condition we call the filter the data and it is stored in the another collection, not in the same collection
+Flat map -->each iteration/operation of each element in/of map method  create one new stream.
+-->flatening mechanism -> the process of merging all/several streams into single collections
+-->method reference -->refering to an existing method without writing a lambda expression
+-->works only with functional interface with one abstract method.
+make code shorter, improve readability
+converting arrays into list --> aslist method is used
+List<> l1 = arrays.asList(1,2,3)
+x ->s.o.p(x)
+L1.for each(system.out::println)
+supplier is used to get data from interface.
+
+if we are doing intermediate operations terminal operations is mandatory.
+
+volatile --> if we change anything in one thread it will visible to all the threads.
+thread performs multiple tasks.
+transient --> if we dont want save the anything/data we use transient keyword.non seralized
+deep copy --> if we have 2 classes if we change in child class it will not effect in parent class also
+shallow copy -->if we have 2 classes if we change in child class it will effect in parent class alsoif we have 2 classes if we change in child class it will effect in parent class also
+rule of inheritance
+object class --> parent of all classes.
+toString method --> convert one data type to string
+-->if we dont want to print memory address in the console we use the toString method eg: arrays,collections
+Finalise() --> before destroying the objects , garbage collection calls the finalize method.
+hashcode equals --> both will present
+terminal operations are manditory when intermediate operations are performed.
+classLoader -->loads the compiled files or .class file
+singleton class --> the class which allows only one object to create.
+we create constructors and it should be private 
+it is thread safe.
+
+WRAPPER CLASS --> if we want to create object for primtive data types.
+auto boxing --> converting primtive to wrapper class
+unboxing  --> converting wrapper class to primtive 
+final blank variable --> if we dont initialized data to a variable it is called final blank variable. just declaration
+
+How to make class immutable?
+making class as private , making fields private , declaring class as final.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+difference between spring and spring boot Of course, both are frameworks. Both are used to develop the standalone applications, distributed applications and web applications. Of course, standard applications 
+
+spring     --> it is a java frame work (group of interfaces and classes),manual configuration
+drawback -->developer have to  write the code manually, becasue of these the applications will be slow,bigger code
+spring boot --> it is a java frame work ,auto configuration
+
+Spring Boot is also used to develop the all the standalone, distributed, web applications. 
+And what are the advantages of Spring Boot? 
+1.starter configuration, automatically it will write the configuration, 
+we have to concentrate only the business logic.
+starter --> dependencies
+2.pom starter -->project object model starter --> it will tell the versions , dependencies
+3.embedded servers -->inbulid , tomcat
+4.rapid/fast development --> because of automatic writing of code 
+5.actuators-->it will check the health of the project.(eg.how many classes are there etc)
+==>auto configuration, pom starters, embedded servers, rapid development
+
+creating Spring Boot project by using the two ways. One is directly We can using the IDE, or we can use the spring intializr
+
+gradle groovy , gradle kotlin ,maven are dependency management tool
+four dependencies
+1. spring starter  web dependency -->  it is used to build the restful api,web api
+2. lombok --> remove the boiler plate code  (repeatative code) eg:getter setter
+3. spring data jpa --> used to do crud operations , in jvm we have crud operation , to perform these we use spring data jpa
+4. database connector like mysql driver 
+persistence means storage
+API --> Application programming interface
+REST API--> can run on any server over the HTTP request
+REST API stands for Representational State Transfer Application Programming Interface.
+
+pom.xml  --> it is a file in which we will add dependencies
+application  properties file --> used for key value pairs, contains external configuration (eg port number,database configuration),
+yaml file -->used for list , hierarchy forms
+
+| application.properties  | application.yml    |
+| ----------------------- | ------------------ |
+| key=value               | indentation-based  |
+| Hard to read when large | Clean & readable   |
+| No hierarchy            | Supports hierarchy |
+
+
+annotation --> it is meta data (information about our code eg what happens in the code)
+
+start class --> entry point of spring boot application/project 
+it contain 2 things @springbootapplication annotation and run method
+
+@springbootapplication annotation --> it contain 3 annotation
+1.@springbootconfiguration --> if we want to modify any object in the spring boot project we use these annotation to modify 
+2.@EnableAutoConfiguration --> it will enables the autoconfiguration (eg : Automatically generate the getters and setters)
+3.@ComponentScan --> it will scan all the packages,classes,objects
+
+run method --> it  will contain the boot straping logic
+boot straping logic ==> the logic which is used to run the spring boot application
+we have banner in these boot straping logic
+it will create run time envirnoment
+it will create ioc container
+it will have listener
+it also has start and stop watch --> time stamp
+
+structure of spring boot project
+five packages
+entity --> if we want to create table in database(sql) we use entity
+model class --> without creating the table eg moongodb
+repository -->it is an interface, and extend the jpa repository, to write the crud operation
+dto--> data transfer object ==> only neccesary fields 
+service class --> buisness class
+controller class -->
+service --> to write the buisness logic
+controller --> to write end point i.e http request
+
+if we denote @id --> memory key default and we cant change
+if we user send the request then request hits entity --> controller --> database [without dto class] it will give all rows
+if user sends the request then request hits DTO --> controller --> database [with dto class] ==> more security 
+dto will take only neccesary data.
+if we denote any class @service that class contain buisness logic
+
+APPLICATION . PROPERTIES
+spring.application.name=SpringBootDemo
+
+server.port=2947
+
+spring.datasource.url=jdbc:mysql://localhost:3306/springbootdb1?createDatabaseIfNotExist=true
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.datasource.username=root
+
+spring.datasource.password=root
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=true
+
+
+@entity ==> comes from jakarta.persistence package -->  without these table will not be created
+@data ==> getters, setters , to string, equals and hashcode --> it is from lombok 
+@allargsconstructor ==> parameterized constructors
+@noargsconstructor ==> default constructors
+@id ==> if we use these then it is unique and generate primary key
+@generatevalue ==> id / value will be automatically generated
+@service ==> that class contain buisness logic
+@restcontroller ==> it handles the controller class , it returns the data in the form of json / xml format
+@response body ==> converts java object into jso object
+@controller ==> it is the bridge b/w frontend and backend
+*******impo ==> difference b/w @controller and @ restcontroller
+@requestmapping ==> base url 
+@autowired ==>it will inject one class object into another class object
+@postmapping ==> to create the data
+@getmapping ==> to get the data
+@putmapping ==> to update the data
+@deletemapping ==> to delete data
+response entity class handles all the requests and series
+100 => create
+200 => success
+300 => next step after creation
+400 => clinetside error -> frontend
+500 => server side error -> backend
+@requestbody ==> to add/store the data into database  (used in postmapping and putmapping)
+@requestparameterized ==> used in key value 
+@pathvariable ==> to get data using path (used in getmapping and deletemapping) 
+
+how to handle exception in spring boot
+@exceptionhandler => global used in whole project
+@controlleradvice ==> class level or controller level
+
+
+Dependency Injection:we are injecting the dependencies into the objects is known as Dependency Injection..
+IOC container:-Inversion of control:-inside the ioc container the dependency injection will be there..
+
+IOC container:-It is the core of the springBoot project in which does all the things like creating  objects ,inserting dependencies into the objects..etc 
+ Types of IOC container:-
+1)Bean Factory(@Bean)
+2)Application context
+
+Bean:-Any  object that is  created and controlled by IOC Container is called beans. 
+
+
+
+
