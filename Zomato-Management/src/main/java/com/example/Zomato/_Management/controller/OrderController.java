@@ -28,4 +28,9 @@ public class OrderController {
         OrderDto o=service.updateitems(id,orderDto);
         return new ResponseEntity<>(o,HttpStatus.OK);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String>deleteitems(@PathVariable Long id){
+        Order o=service.deleteitem(id);
+        return ResponseEntity.ok("items deleted successfully");
+    }
 }

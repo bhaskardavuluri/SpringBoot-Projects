@@ -49,4 +49,10 @@ public class OrderImpl implements OrderService {
         );
 
     }
+    public Order deleteitem(Long id ){
+        Order order=  repository.findById(id)
+                .orElseThrow(()->new RuntimeException("item not found with specific order"));
+        repository.delete(order);
+        return order;
+    }
 }

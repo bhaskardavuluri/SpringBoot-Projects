@@ -7,5 +7,5 @@ public interface OrderService {
     OrderDto createitem(OrderDto orderDto);
     Order getitems(Long id );
     OrderDto updateitems(Long id ,OrderDto orderDto);
-     void deleteitem(Long id);
+    Order   deleteitem(Long id);
 }
